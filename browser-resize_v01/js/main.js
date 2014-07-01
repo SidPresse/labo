@@ -54,6 +54,9 @@ $(document).ready(function(){
 			//on injecte cette variable dans l'attribut 'src' de la balise <iframe>
 			$('#validation').click(function(){
 				var value = $( "#zone-texte" ).val();
+				value = value.replace('http://','');
+				value = value.replace('https://','');
+				value = 'http://'+value;
 				$( "#iframe01" ).attr('src', value);
 				console.log('new src: '+value);
 			})
