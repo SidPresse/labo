@@ -45,18 +45,20 @@ $(document).ready(function(){
 		//Lorsque l'on tape du texte dans la zone input du formulaire
 		//on récupère automatiquement ce que contient son attribut 'value'
 		// et on le stocke dans une variable nommée value		
-		$( "#zone-texte" )
-		.keyup(function() {
+		//$( "#zone-texte" )
+		//.keyup(function() {
 
-		var value = $( this ).val();
+		//var value = $( this ).val();
 
 			//Puis, au clic sur le Bouton 'TESTER' ('div#validation')
 			//on injecte cette variable dans l'attribut 'src' de la balise <iframe>
 			$('#validation').click(function(){
-					$( "#iframe01" ).attr('src', value);
+				var value = $( "#zone-texte" ).val();
+				$( "#iframe01" ).attr('src', value);
+				console.log('new src: '+value);
 			})
 		
-		});
+		//});
 
 		// On ferme le menu en cliquant sur la croix ('div.close'), 
 		// on le fait glisser rapidemment de 1000px sur la gauche
@@ -80,3 +82,4 @@ $(document).ready(function(){
 
 
 });//fin de document ready
+
